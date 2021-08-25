@@ -6,6 +6,7 @@
 class Nonograma
 {
 private:
+    bool solved;
     bool * tablero;
     int width, height;
 public:

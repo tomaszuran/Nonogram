@@ -1,6 +1,8 @@
 #include "nonograma.h"
 
-#define TABLERO(x, y) tablero[height * y + x]
+#define TABLERO(x, y) (tablero[height * y + x])
+
+#define BLOQUE(x, y) (TABLERO(x, y) == 1 ? (char)219 : ' ')
 
 using namespace std;
 
@@ -8,6 +10,8 @@ Nonograma::Nonograma(int w, int h)
 {
     this->width = w;
     this->height = h;
+
+    this->solved = false;
 
     tablero = new bool[w * h];
 }
@@ -23,6 +27,8 @@ void Nonograma::cargarPuzzle(bool * valores)
     {
         tablero[i] = valores[i];
     }
+
+    this->solved = true;
 }
 
 void Nonograma::imprimirPuzzle()
@@ -31,7 +37,7 @@ void Nonograma::imprimirPuzzle()
     {
         for(int x = 0; x < this->width; x++)
         {
-            cout << TABLERO(x, y) << " ";
+            cout << BLOQUE(x, y);
         }
         cout << endl;
     }
