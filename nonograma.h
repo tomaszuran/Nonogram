@@ -14,6 +14,8 @@ public:
 
     void cargarPuzzle(bool * valores);
     void imprimirPuzzle();
+
+    void outputClues();
 };
 
 #endif // NONOGRAMA_H

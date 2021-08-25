@@ -36,3 +36,85 @@ void Nonograma::imprimirPuzzle()
         cout << endl;
     }
 }
+
+void Nonograma::outputClues()
+{
+    bool contando = 0;
+    int cuenta = 0;
+
+    // iteracion vertical
+
+    for(int x = 0; x < this->width; x++)
+    {
+        for(int y = 0; y < this->height; y++)
+        {
+            if(TABLERO(x, y) == 1)
+            {
+                if(contando)
+                {
+                    cuenta++;
+                }
+                if(!contando)
+                {
+                    cuenta = 1;
+                    contando = 1;
+                }
+            }
+            else
+            {
+                if(contando)
+                {
+                    contando = 0;
+                    cout << cuenta << " ";
+                }
+            }
+        }
+
+        if(contando)
+        {
+            contando = 0;
+            cout << cuenta << " ";
+        }
+
+        cout << endl;
+    }
+
+    cout << endl;
+
+    // iteracion horizontal
+
+    for(int y = 0; y < this->height; y++)
+    {
+        for(int x = 0; x < this->width; x++)
+        {
+            if(TABLERO(x, y) == 1)
+            {
+                if(contando)
+                {
+                    cuenta++;
+                }
+                if(!contando)
+                {
+                    cuenta = 1;
+                    contando = 1;
+                }
+            }
+            else
+            {
+                if(contando)
+                {
+                    contando = 0;
+                    cout << cuenta << " ";
+                }
+            }
+        }
+
+        if(contando)
+        {
+            contando = 0;
+            cout << cuenta << " ";
+        }
+
+        cout << endl;
+    }
+}
