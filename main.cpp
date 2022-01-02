@@ -1,7 +1,8 @@
 #include <iostream>
 #include "nonograma.h"
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 int main()
 {
