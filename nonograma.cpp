@@ -4,7 +4,8 @@
 
 #define BLOQUE(x, y) (TABLERO(x, y) == 1 ? (char)219 : ' ')
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 Nonograma::Nonograma(int w, int h)
 {
